@@ -1,3 +1,73 @@
-[gd_scene format=3 uid="uid://b3urua5poih1e"]
+[gd_scene load_steps=11 format=3 uid="uid://b3urua5poih1e"]
+
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_y3jbt"]
+[ext_resource type="ArrayMesh" uid="uid://cmlkjrksvao6l" path="res://Assets/blasterA.obj" id="2_t33ak"]
+
+[sub_resource type="Environment" id="Environment_iqhxh"]
+background_mode = 2
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_53vmu"]
+radius = 0.497201
+height = 1.38374
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m6407"]
+size = Vector3(0.8, 0.2, 0.8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0r1co"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="Skin" id="Skin_lx0m0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3j4cq"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_egmtg"]
+data = PackedVector3Array(-5, 0.5, 5, 5, 0.5, 5, -5, -0.5, 5, 5, 0.5, 5, 5, -0.5, 5, -5, -0.5, 5, 5, 0.5, -5, -5, 0.5, -5, 5, -0.5, -5, -5, 0.5, -5, -5, -0.5, -5, 5, -0.5, -5, 5, 0.5, 5, 5, 0.5, -5, 5, -0.5, 5, 5, 0.5, -5, 5, -0.5, -5, 5, -0.5, 5, -5, 0.5, -5, -5, 0.5, 5, -5, -0.5, -5, -5, 0.5, 5, -5, -0.5, 5, -5, -0.5, -5, 5, 0.5, 5, -5, 0.5, 5, 5, 0.5, -5, -5, 0.5, 5, -5, 0.5, -5, 5, 0.5, -5, -5, -0.5, 5, 5, -0.5, 5, -5, -0.5, -5, 5, -0.5, 5, 5, -0.5, -5, -5, -0.5, -5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6scpb"]
+margin = 0.0
 
 [node name="Game" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_iqhxh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.999864, 5.81998e-11, -0.0164751, -0.0164662, 0.032754, 0.999328, 0.000539625, 0.999463, -0.0327496, 0, 7.11216, 0)
+
+[node name="Player" type="CharacterBody3D" parent="."]
+script = ExtResource("1_y3jbt")
+
+[node name="body" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+shape = SubResource("CapsuleShape3D_53vmu")
+
+[node name="feet" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_m6407")
+
+[node name="pivot" type="Node3D" parent="Player"]
+
+[node name="Camera3D" type="Camera3D" parent="Player/pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+current = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62218, 1.42689, -0.4)
+mesh = ExtResource("2_t33ak")
+
+[node name="ground" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ground"]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.105532, 0.0397511, 0)
+mesh = SubResource("BoxMesh_0r1co")
+skin = SubResource("Skin_lx0m0")
+surface_material_override/0 = SubResource("StandardMaterial3D_3j4cq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ground/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_egmtg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
+transform = Transform3D(0.766975, -0.641677, 0, 0.641677, 0.766975, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_6scpb")
