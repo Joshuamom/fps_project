@@ -15,5 +15,9 @@ https://www.kenney.nl/assets/blaster-kit
 
 ## Future Development
 
+- making a camera item instead of gun
+- make a tv model
+- 
+
 ## Created by
 joshua Mom
