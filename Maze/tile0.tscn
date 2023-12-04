@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://nkxixq03x1ts"]
+
+[ext_resource type="ArrayMesh" uid="uid://cm7et82x0baxm" path="res://Assets/Cave_Terrain_Floor_Normal.obj" id="1_r4mjm"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cdl6r"]
+points = PackedVector3Array(0.507937, 0.00793651, 0.507937, -0.507937, -0.00793651, -0.507937, -0.507937, 0.00793651, -0.507937, 0.507937, -0.00793651, -0.507937, -0.507937, -0.00793651, 0.507937, -0.507937, 0.00793651, 0.507937, 0.507937, 0.00793651, -0.507937, 0.507937, -0.00793651, 0.507937)
+
+[node name="Tile0" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = ExtResource("1_r4mjm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = ExtResource("1_r4mjm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdl6r")
