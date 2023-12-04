@@ -6,7 +6,7 @@ func _ready():
 func _unhandled_input(event):
 	if event.is_action_pressed("menu"):	
 		var menu = get_node_or_null("/root/Game/menu")
-		print("fuck")
+		print("ovo")
 		if menu == null:
 			get_tree().quit()
 		else:
