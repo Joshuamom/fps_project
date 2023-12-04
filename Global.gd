@@ -1,8 +1,12 @@
 extends Node
 
+func _ready():
+	process_mode = PROCESS_MODE_ALWAYS	
+
 func _unhandled_input(event):
 	if event.is_action_pressed("menu"):	
-		var menu = get_node_or_null("/root/game/menu")
+		var menu = get_node_or_null("/root/Game/menu")
+		print("fuck")
 		if menu == null:
 			get_tree().quit()
 		else:

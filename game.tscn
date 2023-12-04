@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://b3urua5poih1e"]
+[gd_scene load_steps=15 format=3 uid="uid://b3urua5poih1e"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_y3jbt"]
+[ext_resource type="Texture2D" uid="uid://myhoyumvj48n" path="res://10124_SLR_Camera_V1_Diffuse.jpg" id="2_8ue47"]
 [ext_resource type="ArrayMesh" uid="uid://dws8np7cged7i" path="res://10124_SLR_Camera_SG_V1_Iteration2.obj" id="2_bw2by"]
 [ext_resource type="Script" path="res://UI/Menu.gd" id="3_e83bx"]
 
@@ -13,6 +14,9 @@ height = 1.38374
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m6407"]
 size = Vector3(0.8, 0.2, 0.8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hum51"]
+albedo_texture = ExtResource("2_8ue47")
 
 [sub_resource type="Skin" id="Skin_3qgew"]
 
@@ -55,7 +59,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 current = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player/pivot"]
-transform = Transform3D(-0.00298746, -0.000273306, 1.28366e-05, 0, 0.000210832, 0.00199506, -0.000273983, 0.00298008, -0.000139968, 0.438855, 1.52139, -0.610443)
+transform = Transform3D(-0.00298746, -0.000273306, 1.92548e-05, 0, 0.000210832, 0.00299258, -0.000273983, 0.00298008, -0.000209951, 0.438855, 1.52139, -0.610443)
+material_override = SubResource("StandardMaterial3D_hum51")
 mesh = ExtResource("2_bw2by")
 skin = SubResource("Skin_3qgew")
 
