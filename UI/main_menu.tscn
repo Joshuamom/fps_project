@@ -1,0 +1,71 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq7chhq6jbmib"]
+
+[ext_resource type="Script" path="res://UI/main_menu.gd" id="1_r46pp"]
+
+[node name="main menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r46pp")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -591.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "killer-shot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.178
+anchor_top = 0.255
+anchor_right = 0.178
+anchor_bottom = 0.255
+offset_left = -0.0559998
+offset_top = -0.240021
+offset_right = 85.944
+offset_bottom = 37.76
+scale = Vector2(2, 2)
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.179
+anchor_top = 0.381
+anchor_right = 0.179
+anchor_bottom = 0.381
+offset_left = 1.79199
+offset_top = 62.112
+offset_right = 87.792
+offset_bottom = 102.112
+scale = Vector2(2, 2)
+text = "Quit"
+
+[node name="yippie" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.182
+anchor_top = 0.252
+anchor_right = 0.182
+anchor_bottom = 0.252
+offset_left = 0.335983
+offset_top = 280.704
+offset_right = 86.336
+offset_bottom = 320.704
+scale = Vector2(2, 2)
+text = "Yippie"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

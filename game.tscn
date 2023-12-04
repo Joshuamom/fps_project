@@ -67,7 +67,7 @@ skin = SubResource("Skin_3qgew")
 [node name="ground" type="StaticBody3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ground"]
-transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.105532, 0.0397511, 0)
+transform = Transform3D(3, 0, 0, 0, 0.1, 0, 0, 0, 3, -0.105532, 0.0397511, 0)
 mesh = SubResource("BoxMesh_0r1co")
 skin = SubResource("Skin_lx0m0")
 surface_material_override/0 = SubResource("StandardMaterial3D_3j4cq")
@@ -98,7 +98,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.356863, 0.356863, 0.356863, 1)
+color = Color(0.356863, 0.356863, 0.356863, 0.639216)
 
 [node name="top" type="ColorRect" parent="pause"]
 layout_mode = 1
