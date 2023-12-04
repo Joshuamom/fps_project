@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvnp627k8hg5h"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j2yyg"]
+
+[node name="enemy" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01971, 0)
+shape = SubResource("CapsuleShape3D_j2yyg")
+
+[node name="root" type="Node3D" parent="."]
+
+[node name="Skeleton3D" type="Skeleton3D" parent="root"]

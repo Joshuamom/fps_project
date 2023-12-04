@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://cw6oow7yua8ym"]
+
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_uwktc"]
+[ext_resource type="Texture2D" uid="uid://myhoyumvj48n" path="res://10124_SLR_Camera_V1_Diffuse.jpg" id="2_q6b0l"]
+[ext_resource type="ArrayMesh" uid="uid://dws8np7cged7i" path="res://10124_SLR_Camera_SG_V1_Iteration2.obj" id="3_xsxji"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_53vmu"]
+radius = 0.497201
+height = 1.38374
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m6407"]
+size = Vector3(0.8, 0.2, 0.8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hum51"]
+albedo_texture = ExtResource("2_q6b0l")
+
+[sub_resource type="Skin" id="Skin_3qgew"]
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.552456, 0)
+script = ExtResource("1_uwktc")
+metadata/_edit_group_ = true
+
+[node name="body" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+shape = SubResource("CapsuleShape3D_53vmu")
+
+[node name="feet" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_m6407")
+
+[node name="pivot" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+current = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="pivot"]
+transform = Transform3D(-0.00298746, -0.000273306, 1.92548e-05, 0, 0.000210832, 0.00299258, -0.000273983, 0.00298008, -0.000209951, 0.438855, 1.52139, -0.610443)
+material_override = SubResource("StandardMaterial3D_hum51")
+mesh = ExtResource("3_xsxji")
+skin = SubResource("Skin_3qgew")
