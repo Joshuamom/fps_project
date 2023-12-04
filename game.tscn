@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3urua5poih1e"]
+[gd_scene load_steps=13 format=3 uid="uid://b3urua5poih1e"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_y3jbt"]
-[ext_resource type="ArrayMesh" uid="uid://cmlkjrksvao6l" path="res://Assets/blasterA.obj" id="2_t33ak"]
+[ext_resource type="ArrayMesh" uid="uid://dws8np7cged7i" path="res://10124_SLR_Camera_SG_V1_Iteration2.obj" id="2_bw2by"]
+[ext_resource type="Script" path="res://UI/Menu.gd" id="3_e83bx"]
 
 [sub_resource type="Environment" id="Environment_iqhxh"]
 background_mode = 2
@@ -12,6 +13,8 @@ height = 1.38374
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m6407"]
 size = Vector3(0.8, 0.2, 0.8)
+
+[sub_resource type="Skin" id="Skin_3qgew"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0r1co"]
 size = Vector3(10, 1, 10)
@@ -52,8 +55,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 current = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player/pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62218, 1.42689, -0.4)
-mesh = ExtResource("2_t33ak")
+transform = Transform3D(-0.00298746, -0.000273306, 1.28366e-05, 0, 0.000210832, 0.00199506, -0.000273983, 0.00298008, -0.000139968, 0.438855, 1.52139, -0.610443)
+mesh = ExtResource("2_bw2by")
+skin = SubResource("Skin_3qgew")
 
 [node name="ground" type="StaticBody3D" parent="."]
 
@@ -71,3 +75,72 @@ shape = SubResource("ConcavePolygonShape3D_egmtg")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
 transform = Transform3D(0.766975, -0.641677, 0, 0.641677, 0.766975, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_6scpb")
+
+[node name="menu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_e83bx")
+
+[node name="bg" type="ColorRect" parent="menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.356863, 0.356863, 0.356863, 1)
+
+[node name="top" type="ColorRect" parent="menu"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 51.0
+grow_horizontal = 2
+color = Color(0.239216, 0.239216, 0.239216, 0.643137)
+
+[node name="Label" type="Label" parent="menu"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 49.0
+grow_horizontal = 2
+text = "
+Objective: get out of the maze"
+
+[node name="Restart" type="Button" parent="menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = 3.0
+offset_right = 62.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restart"
+
+[node name="Quit" type="Button" parent="menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = 70.0
+offset_right = 64.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+
+[connection signal="pressed" from="menu/Restart" to="menu" method="_on_restart_pressed"]
+[connection signal="pressed" from="menu/Quit" to="menu" method="_on_quit_pressed"]

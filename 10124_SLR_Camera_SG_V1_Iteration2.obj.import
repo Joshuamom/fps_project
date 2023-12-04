@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dws8np7cged7i"
+path="res://.godot/imported/10124_SLR_Camera_SG_V1_Iteration2.obj-d74b91763ee1cf0a63a82b6c15ed92c0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/10124_SLR_Camera_SG_V1_Iteration2.obj-d74b91763ee1cf0a63a82b6c15ed92c0.mesh"]
+
+source_file="res://10124_SLR_Camera_SG_V1_Iteration2.obj"
+dest_files=["res://.godot/imported/10124_SLR_Camera_SG_V1_Iteration2.obj-d74b91763ee1cf0a63a82b6c15ed92c0.mesh", "res://.godot/imported/10124_SLR_Camera_SG_V1_Iteration2.obj-d74b91763ee1cf0a63a82b6c15ed92c0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
