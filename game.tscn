@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b3urua5poih1e"]
+[gd_scene load_steps=16 format=3 uid="uid://b3urua5poih1e"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_y3jbt"]
 [ext_resource type="Texture2D" uid="uid://myhoyumvj48n" path="res://10124_SLR_Camera_V1_Diffuse.jpg" id="2_8ue47"]
@@ -20,7 +20,11 @@ albedo_texture = ExtResource("2_8ue47")
 
 [sub_resource type="Skin" id="Skin_3qgew"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kowpv"]
+diffuse_mode = 2
+
 [sub_resource type="BoxMesh" id="BoxMesh_0r1co"]
+material = SubResource("StandardMaterial3D_kowpv")
 size = Vector3(10, 1, 10)
 
 [sub_resource type="Skin" id="Skin_lx0m0"]
@@ -78,6 +82,24 @@ surface_material_override/0 = SubResource("StandardMaterial3D_3j4cq")
 shape = SubResource("ConcavePolygonShape3D_egmtg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
+transform = Transform3D(0.766975, -0.641677, 0, 0.641677, 0.766975, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_6scpb")
+
+[node name="ground2" type="StaticBody3D" parent="."]
+transform = Transform3D(0.23297, 0, 0, 0, 0.0456935, 0.228445, 0, -0.228445, 0.0456935, 0, 4.20948, -3.02051)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ground2"]
+transform = Transform3D(3, 0, 0, 0, 0.0990822, 0.405539, 0, -0.013518, 2.97246, 0.970825, 1.56237, 1.94279)
+mesh = SubResource("BoxMesh_0r1co")
+skin = SubResource("Skin_lx0m0")
+surface_material_override/0 = SubResource("StandardMaterial3D_3j4cq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ground2/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground2/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_egmtg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground2"]
 transform = Transform3D(0.766975, -0.641677, 0, 0.641677, 0.766975, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_6scpb")
 

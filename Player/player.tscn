@@ -38,6 +38,7 @@ current = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="pivot"]
 transform = Transform3D(-0.00298746, -0.000273306, 1.92548e-05, 0, 0.000210832, 0.00299258, -0.000273983, 0.00298008, -0.000209951, 0.438855, 1.52139, -0.610443)
+visible = false
 material_override = SubResource("StandardMaterial3D_hum51")
 mesh = ExtResource("3_xsxji")
 skin = SubResource("Skin_3qgew")
