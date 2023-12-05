@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://diorvqcby5i7k"]
+
+[ext_resource type="Material" uid="uid://ctuipid3t884q" path="res://Assets/Muzzle.tres" id="1_w1ap8"]
+[ext_resource type="ArrayMesh" uid="uid://dws8np7cged7i" path="res://10124_SLR_Camera_SG_V1_Iteration2.obj" id="2_d2ej2"]
+[ext_resource type="ArrayMesh" uid="uid://cacgd85267kts" path="res://muzzleflash.obj" id="3_2j1yu"]
+[ext_resource type="Texture2D" uid="uid://dgttp6wfd0t2h" path="res://muzzleflash.png" id="4_ld1j8"]
+[ext_resource type="Material" uid="uid://c04hrvurr2l1s" path="res://Assets/muzzlemmuzz.tres" id="5_mqki0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2kmv0"]
+shading_mode = 0
+albedo_texture = ExtResource("4_ld1j8")
+
+[node name="camera" type="Node3D"]
+
+[node name="cam" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.003, 0, 0, 0, -1.74846e-10, 0.003, 0, -0.004, -1.31134e-10, 0, 0, -0.0242977)
+material_override = ExtResource("1_w1ap8")
+mesh = ExtResource("2_d2ej2")
+
+[node name="Muzzleflash" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.3, 0, 4.52987e-08, 0, 0.3, 0, -4.52987e-08, 0, -0.3, 0.0238278, 0.137433, 0.329261)
+mesh = ExtResource("3_2j1yu")
+surface_material_override/0 = SubResource("StandardMaterial3D_2kmv0")
+surface_material_override/1 = ExtResource("5_mqki0")
+surface_material_override/2 = ExtResource("5_mqki0")
