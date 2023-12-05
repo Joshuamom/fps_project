@@ -28,6 +28,7 @@ func _unhandled_input(event):
 			vis = false
 		else:
 			$body.set_disabled(false)
+			$Sprite.modulate.a = 255
 			vis = true
 		
 func _physics_process(delta):
@@ -38,6 +39,16 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		
+	if Input.is_action_pressed("shoot"):
+		var wep = $pivot/weapon
+		if wep:
+			for w in wep.get_children():
+				if wep.has_method("shoot"):
+					w.shoot()
+				else:
+					print("o")
+	
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
