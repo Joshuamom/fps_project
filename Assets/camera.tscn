@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://diorvqcby5i7k"]
+[gd_scene load_steps=8 format=3 uid="uid://diorvqcby5i7k"]
 
+[ext_resource type="Script" path="res://Player/camera.gd" id="1_2qakq"]
 [ext_resource type="Material" uid="uid://ctuipid3t884q" path="res://Assets/Muzzle.tres" id="1_w1ap8"]
 [ext_resource type="ArrayMesh" uid="uid://dws8np7cged7i" path="res://10124_SLR_Camera_SG_V1_Iteration2.obj" id="2_d2ej2"]
 [ext_resource type="ArrayMesh" uid="uid://cacgd85267kts" path="res://muzzleflash.obj" id="3_2j1yu"]
@@ -11,15 +12,33 @@ shading_mode = 0
 albedo_texture = ExtResource("4_ld1j8")
 
 [node name="camera" type="Node3D"]
+script = ExtResource("1_2qakq")
 
 [node name="cam" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.003, 0, 0, 0, -1.74846e-10, 0.003, 0, -0.004, -1.31134e-10, 0, 0, -0.0242977)
 material_override = ExtResource("1_w1ap8")
 mesh = ExtResource("2_d2ej2")
 
-[node name="Muzzleflash" type="MeshInstance3D" parent="."]
+[node name="muzzel" type="Node3D" parent="."]
+visible = false
+
+[node name="Muzzleflash" type="MeshInstance3D" parent="muzzel"]
 transform = Transform3D(-0.3, 0, 4.52987e-08, 0, 0.3, 0, -4.52987e-08, 0, -0.3, 0.0238278, 0.137433, 0.329261)
 mesh = ExtResource("3_2j1yu")
+skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_2kmv0")
 surface_material_override/1 = ExtResource("5_mqki0")
 surface_material_override/2 = ExtResource("5_mqki0")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="muzzel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103562, 0.334885)
+light_color = Color(1, 1, 0.898039, 1)
+light_energy = 1.205
+omni_range = 10.0
+omni_attenuation = 1.56917
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
