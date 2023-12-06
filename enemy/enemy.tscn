@@ -1,8 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvnp627k8hg5h"]
+[gd_scene load_steps=5 format=3 uid="uid://cvnp627k8hg5h"]
+
+[ext_resource type="Script" path="res://enemy/enemy.gd" id="1_xycx3"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_uty5x"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j2yyg"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_4w1go"]
+
 [node name="enemy" type="CharacterBody3D"]
+script = ExtResource("1_xycx3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.985555, 0, 0, 0, 0.869834, 0, 0, 0, 1, 0, 1.12292, 0)
+mesh = SubResource("CylinderMesh_uty5x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01971, 0)
@@ -11,3 +22,11 @@ shape = SubResource("CapsuleShape3D_j2yyg")
 [node name="root" type="Node3D" parent="."]
 
 [node name="Skeleton3D" type="Skeleton3D" parent="root"]
+
+[node name="det" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="det"]
+transform = Transform3D(2.79013, 0, 0, 0, 2.79013, 0, 0, 0, 2.79013, 0, 1.36424, 0)
+shape = SubResource("BoxShape3D_4w1go")
+
+[connection signal="area_shape_entered" from="det" to="." method="_on_det_area_shape_entered"]

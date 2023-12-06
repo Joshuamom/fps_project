@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3urua5poih1e"]
+[gd_scene load_steps=10 format=3 uid="uid://b3urua5poih1e"]
 
 [ext_resource type="PackedScene" uid="uid://cw6oow7yua8ym" path="res://Player/player.tscn" id="1_14c8i"]
 [ext_resource type="Script" path="res://UI/Menu.gd" id="3_e83bx"]
+[ext_resource type="PackedScene" uid="uid://cvnp627k8hg5h" path="res://enemy/enemy.tscn" id="3_rl25v"]
 
 [sub_resource type="Environment" id="Environment_iqhxh"]
 background_mode = 2
@@ -113,6 +114,9 @@ grow_horizontal = 2
 grow_vertical = 2
 action_mode = 0
 text = "Quit"
+
+[node name="enemy" parent="." instance=ExtResource("3_rl25v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
 
 [connection signal="pressed" from="pause/Restart" to="pause" method="_on_restart_pressed"]
 [connection signal="pressed" from="pause/Quit" to="pause" method="_on_quit_pressed"]

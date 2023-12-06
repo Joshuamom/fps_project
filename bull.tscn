@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cja5r1ufsu7s"]
+
+[ext_resource type="Script" path="res://bull.gd" id="1_jyhxt"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_d6saw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8me8d"]
+albedo_color = Color(0.878431, 0.862745, 0, 1)
+metallic = 0.4
+emission_enabled = true
+emission = Color(0.517647, 0.517647, 0.517647, 1)
+emission_energy_multiplier = 5.0
+
+[node name="bull" type="Node3D"]
+script = ExtResource("1_jyhxt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.279029, 0, 0, 0, 0.00306641, -0.278844, 0, 0.202162, 0.00422954, 0, 0, 0)
+mesh = SubResource("TorusMesh_d6saw")
+surface_material_override/0 = SubResource("StandardMaterial3D_8me8d")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.00314159, 0.999995, 0, -0.999995, 0.00314159, 0, 0, 0)
