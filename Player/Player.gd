@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-const MOUSE_SENSITIVITY = 0.050
+const MOUSE_SENSITIVITY = 0.030
 const MOUSE_RANGE = 1.2
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -49,3 +49,11 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+
+
+
+
+func _on_level_change_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	if body.name == "Player":
+		get_tree().change_scene_to_file("res://test/test.tscn")

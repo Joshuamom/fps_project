@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://i5mbdkjcbvli"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gritd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xi3kw"]
+
+[node name="level change" type="Area3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_gritd")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_xi3kw")
