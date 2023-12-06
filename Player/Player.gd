@@ -18,8 +18,6 @@ func _unhandled_input(event):
 		$pivot.rotation.x = clamp($pivot.rotation.x, -MOUSE_RANGE, MOUSE_RANGE)
 		# left-right motion, applied to the Player
 		rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
-	if event.is_action_pressed("Quit"):
-		get_tree().quit()
 		
 func _physics_process(delta):
 	# Add the gravity.
