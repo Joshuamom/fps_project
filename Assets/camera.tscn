@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://diorvqcby5i7k"]
+[gd_scene load_steps=9 format=3 uid="uid://diorvqcby5i7k"]
 
 [ext_resource type="Script" path="res://Player/camera.gd" id="1_2qakq"]
 [ext_resource type="Material" uid="uid://ctuipid3t884q" path="res://Assets/Muzzle.tres" id="1_w1ap8"]
@@ -6,6 +6,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cacgd85267kts" path="res://muzzleflash.obj" id="3_2j1yu"]
 [ext_resource type="Texture2D" uid="uid://dgttp6wfd0t2h" path="res://muzzleflash.png" id="4_ld1j8"]
 [ext_resource type="Material" uid="uid://c04hrvurr2l1s" path="res://Assets/muzzlemmuzz.tres" id="5_mqki0"]
+[ext_resource type="AudioStream" uid="uid://j0q6yyd6f1sf" path="res://enemy/scream.wav" id="7_sn6ga"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2kmv0"]
 shading_mode = 0
@@ -42,6 +43,9 @@ wait_time = 0.2
 one_shot = true
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(16.0081, 0, 0, 0, -0.00346642, 4.96397, 0, -2.0266, -0.00849068, 0, 0.139375, 0.280169)
+transform = Transform3D(34.0376, 0, 0, 0, -0.00345655, 13.2281, 0, -2.02083, -0.0226261, 0, 0.139375, 0.280169)
+
+[node name="scream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_sn6ga")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

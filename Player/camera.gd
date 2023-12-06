@@ -7,6 +7,7 @@ func shoot():
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
 		if collider.is_in_group("enemy"):
+			$scream.play()
 			collider.queue_free()
 	shooting = true
 	
@@ -22,7 +23,7 @@ func _on_detect_area_entered(area):
 	pass
 
 #
-func _on_detect_body_entered(body):
-	print("shooting")
-	if body.name == "enemy" and shooting:
-		body.queue_free()
+#func _on_detect_body_entered(body):
+#	print("shooting")
+#	if body.name == "enemy" and shooting:
+#		body.queue_free()

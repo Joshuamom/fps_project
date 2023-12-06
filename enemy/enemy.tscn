@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvnp627k8hg5h"]
+[gd_scene load_steps=6 format=3 uid="uid://cvnp627k8hg5h"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_wpsi7"]
+[ext_resource type="AudioStream" uid="uid://r64boaxtnvll" path="res://enemy/tbh-creature-scream-made-with-Voicemod-technology.mp3" id="2_2236e"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xk6dg"]
 
@@ -31,5 +32,8 @@ shape = SubResource("CapsuleShape3D_j2yyg")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00523, 0)
 shape = SubResource("CylinderShape3D_pci8o")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_2236e")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
