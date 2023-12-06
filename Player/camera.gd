@@ -19,11 +19,10 @@ func _on_timer_timeout():
 	
 
 
-func _on_detect_area_entered(area):
-	pass
+#func _on_detect_area_entered(area):
+#	pass
 
 #
 #func _on_detect_body_entered(body):
-#	print("shooting")
-#	if body.name == "enemy" and shooting:
-#		body.queue_free()
+#	if body.name == "enemy":
+#		$ding.play()

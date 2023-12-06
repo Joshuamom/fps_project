@@ -1,25 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3urua5poih1e"]
+[gd_scene load_steps=7 format=3 uid="uid://b3urua5poih1e"]
 
 [ext_resource type="PackedScene" uid="uid://cw6oow7yua8ym" path="res://Player/player.tscn" id="1_14c8i"]
+[ext_resource type="PackedScene" uid="uid://dnf1hpkka1cqn" path="res://pause.tscn" id="2_jsbxe"]
 [ext_resource type="PackedScene" uid="uid://cvnp627k8hg5h" path="res://enemy/enemy.tscn" id="3_7yd25"]
-[ext_resource type="Script" path="res://UI/Menu.gd" id="3_e83bx"]
 [ext_resource type="PackedScene" uid="uid://i5mbdkjcbvli" path="res://level_change.tscn" id="4_ou6bp"]
+[ext_resource type="PackedScene" uid="uid://8j50jbrnd1b6" path="res://terrain/terrain.tscn" id="5_001yd"]
 
 [sub_resource type="Environment" id="Environment_iqhxh"]
 background_mode = 2
-
-[sub_resource type="BoxMesh" id="BoxMesh_0r1co"]
-size = Vector3(10, 1, 10)
-
-[sub_resource type="Skin" id="Skin_lx0m0"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3j4cq"]
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_egmtg"]
-data = PackedVector3Array(-5, 0.5, 5, 5, 0.5, 5, -5, -0.5, 5, 5, 0.5, 5, 5, -0.5, 5, -5, -0.5, 5, 5, 0.5, -5, -5, 0.5, -5, 5, -0.5, -5, -5, 0.5, -5, -5, -0.5, -5, 5, -0.5, -5, 5, 0.5, 5, 5, 0.5, -5, 5, -0.5, 5, 5, 0.5, -5, 5, -0.5, -5, 5, -0.5, 5, -5, 0.5, -5, -5, 0.5, 5, -5, -0.5, -5, -5, 0.5, 5, -5, -0.5, 5, -5, -0.5, -5, 5, 0.5, 5, -5, 0.5, 5, 5, 0.5, -5, -5, 0.5, 5, -5, 0.5, -5, 5, 0.5, -5, -5, -0.5, 5, 5, -0.5, 5, -5, -0.5, -5, 5, -0.5, 5, 5, -0.5, -5, -5, -0.5, -5)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6scpb"]
-margin = 0.0
 
 [node name="Game" type="Node3D"]
 
@@ -30,98 +18,17 @@ environment = SubResource("Environment_iqhxh")
 transform = Transform3D(-0.999864, 5.81998e-11, -0.0164751, -0.0164662, 0.032754, 0.999328, 0.000539625, 0.999463, -0.0327496, 0, 7.11216, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_14c8i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42505, 2.78448, 0)
 
-[node name="ground" type="StaticBody3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ground"]
-transform = Transform3D(3, 0, 0, 0, 0.1, 0, 0, 0, 3, -0.105532, 0.0397511, 0)
-mesh = SubResource("BoxMesh_0r1co")
-skin = SubResource("Skin_lx0m0")
-surface_material_override/0 = SubResource("StandardMaterial3D_3j4cq")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="ground/MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_egmtg")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
-transform = Transform3D(0.766975, -0.641677, 0, 0.641677, 0.766975, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("ConcavePolygonShape3D_6scpb")
-
-[node name="pause" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("3_e83bx")
-
-[node name="bg" type="ColorRect" parent="pause"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.356863, 0.356863, 0.356863, 0.639216)
-
-[node name="top" type="ColorRect" parent="pause"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 51.0
-grow_horizontal = 2
-color = Color(0.239216, 0.239216, 0.239216, 0.643137)
-
-[node name="Label" type="Label" parent="pause"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 49.0
-grow_horizontal = 2
-text = "
-Objective: get out of the maze"
-
-[node name="Restart" type="Button" parent="pause"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -71.0
-offset_top = 3.0
-offset_right = 62.0
-offset_bottom = 44.0
-grow_horizontal = 2
-grow_vertical = 2
-action_mode = 0
-text = "Restart"
-
-[node name="Quit" type="Button" parent="pause"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -69.0
-offset_top = 70.0
-offset_right = 64.0
-offset_bottom = 111.0
-grow_horizontal = 2
-grow_vertical = 2
-action_mode = 0
-text = "Quit"
+[node name="pause" parent="." instance=ExtResource("2_jsbxe")]
 
 [node name="enemy" parent="." instance=ExtResource("3_7yd25")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.44889)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.38019)
 
 [node name="level change" parent="." instance=ExtResource("4_ou6bp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18778, 3.39733)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.4677, 1.18778, 3.39733)
 
-[connection signal="pressed" from="pause/Restart" to="pause" method="_on_restart_pressed"]
-[connection signal="pressed" from="pause/Quit" to="pause" method="_on_quit_pressed"]
+[node name="terrain" parent="." instance=ExtResource("5_001yd")]
+transform = Transform3D(3.5578, 0, 0, 0, 3.5578, 0, 0, 0, 3.5578, 0, 0, 18.4925)
+
 [connection signal="body_shape_entered" from="level change" to="Player" method="_on_level_change_body_shape_entered"]

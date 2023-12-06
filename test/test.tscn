@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://byu8fxlkla8ii"]
+[gd_scene load_steps=5 format=3 uid="uid://byu8fxlkla8ii"]
 
 [ext_resource type="PackedScene" uid="uid://cw6oow7yua8ym" path="res://Player/player.tscn" id="1_mlu8x"]
+[ext_resource type="PackedScene" uid="uid://dnf1hpkka1cqn" path="res://pause.tscn" id="2_gu6ue"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3kb34"]
 
@@ -25,4 +26,5 @@ transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_7kofl")
 
 [node name="Player" parent="." instance=ExtResource("1_mlu8x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.18997, 0)
+
+[node name="pause" parent="." instance=ExtResource("2_gu6ue")]
