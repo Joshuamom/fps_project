@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cw6oow7yua8ym"]
+[gd_scene load_steps=10 format=3 uid="uid://cw6oow7yua8ym"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_uwktc"]
 [ext_resource type="Texture2D" uid="uid://myhoyumvj48n" path="res://10124_SLR_Camera_V1_Diffuse.jpg" id="2_q6b0l"]
 [ext_resource type="ArrayMesh" uid="uid://dws8np7cged7i" path="res://10124_SLR_Camera_SG_V1_Iteration2.obj" id="3_xsxji"]
 [ext_resource type="PackedScene" uid="uid://diorvqcby5i7k" path="res://Assets/camera.tscn" id="4_enfxb"]
+[ext_resource type="AudioStream" uid="uid://dmg7j5qr2ob3l" path="res://enemy/166500__thompsonman__camera-shutter.wav" id="5_58twy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_53vmu"]
 radius = 0.497201
@@ -47,3 +48,6 @@ skin = SubResource("Skin_3qgew")
 
 [node name="camera" parent="pivot/weapon" instance=ExtResource("4_enfxb")]
 transform = Transform3D(-0.998753, 0, 0.0499305, 0, 1, 0, -0.0499305, 0, -0.998753, 0.39259, 1.49065, -0.674278)
+
+[node name="snap" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_58twy")
