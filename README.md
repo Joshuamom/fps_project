@@ -14,6 +14,8 @@ https://www.kenney.nl/assets/blaster-kit
 
 ## References
 - camera model by printable_models: https://free3d.com/3d-model/slr-camera-v1--279412.html
+- flash sound: https://freesound.org/people/ThompsonMan/sounds/166500/
+- 
 
 ## Future Development
 
