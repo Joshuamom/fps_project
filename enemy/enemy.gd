@@ -8,15 +8,15 @@ const JUMP_VELOCITY = 4.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
-func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		var current_location = global_transform.origin
-		var next_loc = nav_agent.get_next_location
-		var new_vel = (next_loc - current_location).normalized * SPEED
-		velocity = new_vel
-
-
-	move_and_slide()
-func update_target_location(target_location):
-	nav_agent.set_target_location(target_location)
+#func _physics_process(delta):
+#	# Add the gravity.
+#	if not is_on_floor():
+#		var current_location = global_transform.origin
+#		var next_loc = nav_agent.get_next_location
+#		var new_vel = (next_loc - current_location).normalized * SPEED
+#		velocity = new_vel
+#
+#
+#	move_and_slide()
+#func update_target_location(target_location):
+#	nav_agent.set_target_location(target_location)
