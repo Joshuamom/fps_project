@@ -3,6 +3,7 @@ var shooting = false
 @onready var raycast = $RayCast3D
 func shoot():
 	$muzzel.show()
+	$sparkel.emitting = true
 	print("hell")
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
