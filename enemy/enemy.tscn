@@ -36,4 +36,9 @@ shape = SubResource("CylinderShape3D_pci8o")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_2236e")
 
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0269413, 1.78219, 0, -3.09334, -0.0155219, 0, 1.16938, 0)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
