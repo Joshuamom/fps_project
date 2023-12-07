@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://byu8fxlkla8ii"]
+[gd_scene load_steps=6 format=3 uid="uid://byu8fxlkla8ii"]
 
 [ext_resource type="PackedScene" uid="uid://cw6oow7yua8ym" path="res://Player/player.tscn" id="1_mlu8x"]
+[ext_resource type="Script" path="res://test/test.gd" id="1_tg37j"]
 [ext_resource type="PackedScene" uid="uid://dnf1hpkka1cqn" path="res://pause.tscn" id="2_gu6ue"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3kb34"]
@@ -9,6 +10,7 @@
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [node name="test" type="Node3D"]
+script = ExtResource("1_tg37j")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 

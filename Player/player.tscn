@@ -47,7 +47,16 @@ skin = SubResource("Skin_3qgew")
 [node name="weapon" type="Node3D" parent="pivot"]
 
 [node name="camera" parent="pivot/weapon" instance=ExtResource("4_enfxb")]
-transform = Transform3D(-0.998753, 0, 0.0499305, 0, 1, 0, -0.0499305, 0, -0.998753, 0.39259, 1.49065, -0.674278)
+transform = Transform3D(-0.998753, 0, 0.0499305, 0, 1, 0, -0.0499305, 0, -0.998753, -0.0276471, 1.49065, -0.929861)
 
 [node name="snap" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_58twy")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64194, 0)
+light_color = Color(1, 1, 0.603922, 1)
+light_energy = 1.984
+light_indirect_energy = 2.508
+omni_range = 17.655
+omni_attenuation = 1.23114
+omni_shadow_mode = 0
