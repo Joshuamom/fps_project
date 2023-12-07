@@ -72,8 +72,9 @@ surface_material_override/2 = ExtResource("5_mqki0")
 [node name="OmniLight3D" type="OmniLight3D" parent="muzzel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103562, 0.334885)
 light_color = Color(1, 1, 0.898039, 1)
-light_energy = 1.205
-omni_range = 10.0
+light_energy = 50.0
+light_volumetric_fog_energy = 10.246
+omni_range = 72.223
 omni_attenuation = 1.56917
 
 [node name="Timer" type="Timer" parent="."]
