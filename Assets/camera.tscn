@@ -44,7 +44,7 @@ wait_time = 0.2
 one_shot = true
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(34.0376, 0, 0, 0, -0.00345028, 27.2408, 0, -2.01717, -0.0465943, 0, 0.139375, 0.280169)
+transform = Transform3D(34.0297, 0.0435822, 0.0010067, 0, -0.00345028, 27.2408, 0.735399, -2.0167, -0.0465834, 0, 0.139375, 0.280169)
 
 [node name="scream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_sn6ga")
