@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cw6oow7yua8ym"]
+[gd_scene load_steps=11 format=3 uid="uid://cw6oow7yua8ym"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_uwktc"]
 [ext_resource type="Texture2D" uid="uid://myhoyumvj48n" path="res://10124_SLR_Camera_V1_Diffuse.jpg" id="2_q6b0l"]
@@ -17,6 +17,8 @@ size = Vector3(0.8, 0.2, 0.8)
 albedo_texture = ExtResource("2_q6b0l")
 
 [sub_resource type="Skin" id="Skin_3qgew"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6bcf0"]
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1.2042, 0, 0, 0, 1.2042, 0, 0, 0, 1.2042, 0, -0.552456, 0)
@@ -62,3 +64,9 @@ light_indirect_energy = 2.508
 omni_range = 17.655
 omni_attenuation = 1.23114
 omni_shadow_mode = 0
+
+[node name="attac" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="attac"]
+transform = Transform3D(1.23021, 0, 0, 0, 1.23021, 0, 0, 0, 1.23021, 0, 1.37709, 0)
+shape = SubResource("CapsuleShape3D_6bcf0")

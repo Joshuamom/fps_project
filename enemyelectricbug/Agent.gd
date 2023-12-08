@@ -31,15 +31,17 @@ func _on_area_3d_body_entered(body):
 	if not dying:
 		attack = true
 		$AnimationPlayer.play("Attack")
+		$Timer2.start()
 		
 
 func _on_area_3d_body_exited(body):
 	if not dying:
 		attack = false
-		$AnimationPlayer.play("Walk")
+#		$AnimationPlayer.play("Walk")
 		
 func damage():
 	dying = true
+	$blood.emitting = true
 	$death_sound.play()
 	$AnimationPlayer.play("Death")
 	velocity = Vector3.ZERO
@@ -50,3 +52,12 @@ func damage():
 
 func _on_timer_timeout():
 	queue_free()
+
+
+
+
+
+#func _on_timer_2_timeout():
+#	for b in $Area3D.overlaps_body():
+#		if b.has_method("damage"):
+#			b.damage()

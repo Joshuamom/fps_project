@@ -4,20 +4,21 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const MOUSE_SENSITIVITY = 0.030
 const MOUSE_RANGE = 1.2
-
+var health = 1
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+func ready():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _unhandled_input(event):
 	# if the mouse has moved
 	if event is InputEventMouseMotion:
-		# up-down motion, applied to the $Pivot
 		$pivot.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
-		# make sure we can't look inside ourselves :)
-		$pivot.rotation.x = clamp($pivot.rotation.x, -MOUSE_RANGE, MOUSE_RANGE)
-		# left-right motion, applied to the Player
+		$pivot.rotation.x = clamp($pivot.rotation.x, -0.5, 0.3)
 		rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
+		
+		
 		
 func _physics_process(delta):
 	# Add the gravity.
@@ -48,8 +49,6 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
-
-
 
 
 
