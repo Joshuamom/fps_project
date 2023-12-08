@@ -5,10 +5,18 @@ Context and date
 Description
 
 ## Implementation
+- has a controllable player
+- a terain for the player to walk around
+- a generated maze
+- use of the CSG to make the giant cave with subtraction
+- has a enemy that walks and comes to you
+- dialouge at the beginning for narrative story
+- reports score
+- menus (pause, main, and end)
+- added particles to the camer flash, orb dissaperating, and blood particles for zombie death
+- enviormental lighting (fog, fire light, players camera light flash,players light in general)
 
-## What Makes this a Game?
-
-i made a small collectiong game where you have to take photos of glowing orbs and ghouls around the map
+i made a small collectiong game where you have to take photos of glowing orbs and ghouls around the map and you need to collect them all in order to win
 
 ## References
 models:
