@@ -25,9 +25,13 @@ models:
 - zombie sounds from funkyfilms: https://freesound.org/people/FunkyFilms/sounds/338059/
 - glowing sound: https://freesound.org/people/waveplaySFX/sounds/187499/
 - camfire sound: https://freesound.org/people/cagankaya/sounds/679007/
+- death zombie sound: https://freesound.org/people/tonsil5/sounds/555411/
 
 typeface:
 - Cheeky Rabbit by Ayu Lovayu: https://www.dafont.com/cheeky-rabbit.font?af=on&l[]=10&l[]=1&l[]=6
+
+Self made:
+- the cave shpere
 - theme of buttons done by me
 
 
