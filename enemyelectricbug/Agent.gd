@@ -31,13 +31,12 @@ func _on_area_3d_body_entered(body):
 	if not dying:
 		attack = true
 		$AnimationPlayer.play("Attack")
-		$Timer2.start()
 		
 
 func _on_area_3d_body_exited(body):
 	if not dying:
 		attack = false
-#		$AnimationPlayer.play("Walk")
+		$AnimationPlayer.play("Walk")
 		
 func damage():
 	dying = true

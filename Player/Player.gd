@@ -10,6 +10,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	$night.play()
 
 func _unhandled_input(event):
 	# if the mouse has moved

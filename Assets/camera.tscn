@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dgttp6wfd0t2h" path="res://muzzleflash.png" id="4_ld1j8"]
 [ext_resource type="Material" uid="uid://c04hrvurr2l1s" path="res://Assets/muzzlemmuzz.tres" id="5_mqki0"]
 [ext_resource type="AudioStream" uid="uid://cdym6c8rs7ns2" path="res://enemy/514864__matrixxx__elevator-ping-03.wav" id="8_exw84"]
-[ext_resource type="Texture2D" uid="uid://dshadanjisqjg" path="res://icon.svg" id="9_ypnb7"]
+[ext_resource type="Texture2D" uid="uid://b0skpvqdr2m2t" path="res://heart.png" id="8_ugbg1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2kmv0"]
 shading_mode = 0
@@ -100,7 +100,7 @@ process_material = SubResource("ParticleProcessMaterial_iar82")
 draw_pass_1 = SubResource("SphereMesh_utk4g")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.0493109, 0.203829, 3)
-texture = ExtResource("9_ypnb7")
+transform = Transform3D(1.75356, 0, 0, 0, 1.75356, 0, 0, 0, 1.75356, -0.0493109, 0.203829, 3)
+texture = ExtResource("8_ugbg1")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

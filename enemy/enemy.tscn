@@ -88,6 +88,7 @@ shape = SubResource("CylinderShape3D_pci8o")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_2236e")
+volume_db = 1.0
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.0269413, 1.78219, 0, -3.09334, -0.0155219, 0, 1.16938, 0)
@@ -108,6 +109,7 @@ light_size = 0.201
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.898808, 0)
 stream = ExtResource("4_mugl7")
+volume_db = -0.1
 autoplay = true
 max_distance = 30.0
 

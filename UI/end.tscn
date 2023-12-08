@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjjo37cyg2vd4"]
+[gd_scene load_steps=5 format=3 uid="uid://bjjo37cyg2vd4"]
 
 [ext_resource type="Script" path="res://UI/end.gd" id="1_hlt6r"]
 [ext_resource type="FontFile" uid="uid://ct4jtrqs65hbn" path="res://Assets/Cheeky Rabbit.ttf" id="2_sqbel"]
 [ext_resource type="Theme" uid="uid://q4cg8ufmm1gx" path="res://UI/flash final.tres" id="3_8co0h"]
+[ext_resource type="AudioStream" uid="uid://okjg5u1oaguq" path="res://HoliznaCC0 - Fire Place.mp3" id="4_yrmyn"]
 
 [node name="End" type="Control"]
 layout_mode = 3
@@ -53,6 +54,10 @@ offset_right = 533.12
 offset_bottom = 73.104
 theme = ExtResource("3_8co0h")
 text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_yrmyn")
+autoplay = true
 
 [connection signal="pressed" from="Replay" to="." method="_on_replay_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
