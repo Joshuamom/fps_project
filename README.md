@@ -8,7 +8,7 @@ Description
 - has a controllable player
 - a terain for the player to walk around
 - a generated maze
-- use of the CSG to make the giant cave with subtraction
+- use of the CSG to make the giant cave with subtraction and animated
 - has a enemy that walks and comes to you
 - dialouge at the beginning for narrative story
 - reports score
