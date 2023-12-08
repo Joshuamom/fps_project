@@ -13,7 +13,7 @@ func damage():
 	$scream.play()
 
 	# Update the score (assuming Global is a singleton or some global script)
-	Global.Update_Score(300)
+	Global.Update_Score(200)
 	
 	$Timer.start()
 

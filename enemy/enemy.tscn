@@ -1,10 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvnp627k8hg5h"]
+[gd_scene load_steps=8 format=3 uid="uid://cvnp627k8hg5h"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_wpsi7"]
 [ext_resource type="AudioStream" uid="uid://r64boaxtnvll" path="res://enemy/tbh-creature-scream-made-with-Voicemod-technology.mp3" id="2_2236e"]
 [ext_resource type="AudioStream" uid="uid://j0q6yyd6f1sf" path="res://enemy/scream.wav" id="3_4cw7e"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_gfyso"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gd35g"]
+albedo_color = Color(0.705882, 0.607843, 0, 1)
+metallic = 0.2
+roughness = 0.35
+emission_enabled = true
+emission = Color(0.8, 0.505882, 0.168627, 1)
+emission_energy_multiplier = 2.75
+ao_enabled = true
+ao_light_affect = 0.5
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.95
+refraction_enabled = true
+refraction_scale = -0.05
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j2yyg"]
 
@@ -19,6 +33,7 @@ script = ExtResource("1_wpsi7")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01464, 0)
 mesh = SubResource("SphereMesh_gfyso")
+surface_material_override/0 = SubResource("StandardMaterial3D_gd35g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01971, 0)
@@ -46,6 +61,12 @@ transform = Transform3D(1, 0, 0, 0, -0.0269413, 1.78219, 0, -3.09334, -0.0155219
 stream = ExtResource("3_4cw7e")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985089, 0)
+light_color = Color(1, 1, 0.541176, 1)
+light_energy = 6.11
+light_size = 0.201
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
