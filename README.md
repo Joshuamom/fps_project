@@ -44,6 +44,7 @@ Self made:
 - theme of buttons done by me
 - flash and bloor particles
 - fire particles
+- heart cross hare
 
 
 ## Future Development
