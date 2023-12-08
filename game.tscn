@@ -72,7 +72,7 @@ visible = false
 [node name="enemy holder" type="Node3D" parent="."]
 
 [node name="enemy" parent="enemy holder" instance=ExtResource("3_7yd25")]
-transform = Transform3D(1.00022, 0, 0, 0, 1.00022, 0, 0, 0, 1.00022, 31.7771, 2.01613, 15.5283)
+transform = Transform3D(1.00022, 0, 0, 0, 1.00022, 0, 0, 0, 1.00022, 18.7771, 2.01613, 7.5283)
 
 [node name="enemy2" parent="enemy holder" instance=ExtResource("3_7yd25")]
 transform = Transform3D(1.00022, 0, 0, 0, 1.00022, 0, 0, 0, 1.00022, -11.4568, 1.73269, -12.3884)
@@ -89,7 +89,7 @@ transform = Transform3D(1.00022, 0, 0, 0, 1.00022, 0, 0, 0, 1.00022, -35.584, 1.
 [node name="terrain holder" type="Node" parent="."]
 
 [node name="Maze" parent="terrain holder" instance=ExtResource("8_4ykn0")]
-transform = Transform3D(0.753031, 0, 0, 0, 0.753031, 0, 0, 0, 0.753031, 25.8449, 0.574128, 1.5472)
+transform = Transform3D(0.753031, 0, 0, 0, 0.753031, 0, 0, 0, 0.753031, 17.8449, 0.574128, 1.5472)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="terrain holder"]
 transform = Transform3D(0.753031, 0, 0, 0, 0.753031, 0, 0, 0, 0.753031, -4.91197, 0.864361, -3.23544)

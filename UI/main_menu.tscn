@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dq7chhq6jbmib"]
+[gd_scene load_steps=7 format=3 uid="uid://dq7chhq6jbmib"]
 
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_r46pp"]
+[ext_resource type="Texture2D" uid="uid://nxv48bbi0wio" path="res://ULNI7265.PNG" id="2_en3b4"]
 [ext_resource type="FontFile" uid="uid://ct4jtrqs65hbn" path="res://Assets/Cheeky Rabbit.ttf" id="2_iheqf"]
 [ext_resource type="Theme" uid="uid://q4cg8ufmm1gx" path="res://UI/flash final.tres" id="2_yosiy"]
 [ext_resource type="AudioStream" uid="uid://okjg5u1oaguq" path="res://HoliznaCC0 - Fire Place.mp3" id="4_xr7iv"]
+[ext_resource type="AudioStream" uid="uid://dkw8o05w21wl0" path="res://yippie.wav" id="6_x44aq"]
 
 [node name="main menu" type="Control"]
 layout_mode = 3
@@ -13,6 +15,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r46pp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_en3b4")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -100,5 +111,9 @@ text = "Yippie"
 stream = ExtResource("4_xr7iv")
 autoplay = true
 
+[node name="YIP" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_x44aq")
+
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="yippie" to="." method="_on_yippie_pressed"]

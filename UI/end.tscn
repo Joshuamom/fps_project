@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjjo37cyg2vd4"]
+[gd_scene load_steps=6 format=3 uid="uid://bjjo37cyg2vd4"]
 
 [ext_resource type="Script" path="res://UI/end.gd" id="1_hlt6r"]
+[ext_resource type="Texture2D" uid="uid://gmujxrv7ew3" path="res://TPXX1529.PNG" id="2_8ftnw"]
 [ext_resource type="FontFile" uid="uid://ct4jtrqs65hbn" path="res://Assets/Cheeky Rabbit.ttf" id="2_sqbel"]
 [ext_resource type="Theme" uid="uid://q4cg8ufmm1gx" path="res://UI/flash final.tres" id="3_8co0h"]
 [ext_resource type="AudioStream" uid="uid://okjg5u1oaguq" path="res://HoliznaCC0 - Fire Place.mp3" id="4_yrmyn"]
@@ -13,6 +14,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hlt6r")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0352941, 0.164706, 0.160784, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 347.0
+offset_top = 277.0
+offset_right = 1595.0
+offset_bottom = 2029.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.180429, 0.165451)
+texture = ExtResource("2_8ftnw")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
