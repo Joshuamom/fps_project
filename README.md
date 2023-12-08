@@ -13,7 +13,7 @@ https://www.kenney.nl/assets/blaster-kit
 ## What Makes this a Game?
 
 ## References
-modles:
+models:
 - camera model by printable_models: https://free3d.com/3d-model/slr-camera-v1--279412.html
 - flash model: https://opengameart.org/content/muzzle-flash-with-model
 - enemy and NPC model and aimation: https://www.kenney.nl/assets/animated-characters-2
