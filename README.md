@@ -13,9 +13,11 @@ Description
 - dialouge at the beginning for narrative story
 - reports score
 - menus (pause, main, and end)
+  extra things:
 - added particles to the camer flash, orb dissaperating, and blood particles for zombie death
 - enviormental lighting (fog, fire light, players camera light flash,players light in general)
 - add of sound to fire, zombie, lighting, orb
+- made a heart cross hare
 
 i made a small collectiong game where you have to take photos of glowing orbs and ghouls around the map and you need to collect them all in order to win
 
@@ -43,6 +45,7 @@ Self made:
 - theme of buttons done by me
 - flash and bloor particles
 - fire particles
+- heart cross hare
 
 
 ## Future Development
