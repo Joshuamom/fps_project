@@ -39,6 +39,9 @@ models:
 - death zombie sound: https://freesound.org/people/tonsil5/sounds/555411/
 - night amabient: https://freesound.org/people/columbia23/sounds/396763/
 
+Music:
+https://freemusicarchive.org/music/holiznacc0/winter-lofi/fire-place/
+
 typeface:
 - Cheeky Rabbit by Ayu Lovayu: https://www.dafont.com/cheeky-rabbit.font?af=on&l[]=10&l[]=1&l[]=6
 
