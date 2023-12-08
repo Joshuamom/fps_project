@@ -5,7 +5,7 @@ var Dialouge = [
 	"David: Hey roomie, you got a nice camera!, I heard it has a powerful flash!"
 	, "Me: thanks! :3 i got it on sale, I heard a maze was here"
 	, "David: Yeah! theres one nearby, but i cant remember if its by the cave or somewhere else..."
-	, "David: but you should watch out, some sghous have been sighted so watch out!, the camera might work!"
+	, "David: but you should watch out, some ghouls are around, the camera might work!"
 	, "me: Gotcha! well, i'll just take some photos, maybe of some stange things..."
 ]
 

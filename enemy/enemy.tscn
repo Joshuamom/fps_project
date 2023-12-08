@@ -11,7 +11,7 @@
 height = 1.94954
 radius = 0.884398
 
-[node name="enemy" type="CharacterBody3D" groups=["enemy"]]
+[node name="enemy" type="CharacterBody3D" groups=["goul"]]
 collision_layer = 3
 script = ExtResource("1_wpsi7")
 

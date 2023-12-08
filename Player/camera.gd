@@ -10,6 +10,8 @@ func shoot():
 		if collider.is_in_group("enemy"):
 			$scream.play()
 			collider.queue_free()
+		elif collider.is_in_group("goul"):
+			collider.queue_free()
 	shooting = true
 	
 	$Timer.start()
