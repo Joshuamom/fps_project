@@ -26,6 +26,7 @@ func _physics_process(delta):
 			velocity.y = 0
 		move_and_slide()
 
+#WE ARE DONE
 
 func _on_area_3d_body_entered(body):
 	if not dying:
