@@ -6,11 +6,9 @@ Description
 
 ## Implementation
 
-
-blasters:
-https://www.kenney.nl/assets/blaster-kit
-
 ## What Makes this a Game?
+
+i made a small collectiong game where you have to take photos of glowing orbs and ghouls around the map
 
 ## References
 models:
@@ -34,6 +32,8 @@ typeface:
 Self made:
 - the cave shpere
 - theme of buttons done by me
+- flash and bloor particles
+- fire particles
 
 
 ## Future Development
