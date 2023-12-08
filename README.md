@@ -24,9 +24,11 @@ models:
 - yippie sound: https://tuna.voicemod.net/sound/54048169-1d46-4fe4-8175-b7a888327f12
 - zombie sounds from funkyfilms: https://freesound.org/people/FunkyFilms/sounds/338059/
 - glowing sound: https://freesound.org/people/waveplaySFX/sounds/187499/
+- camfire sound: https://freesound.org/people/cagankaya/sounds/679007/
 
 typeface:
 - Cheeky Rabbit by Ayu Lovayu: https://www.dafont.com/cheeky-rabbit.font?af=on&l[]=10&l[]=1&l[]=6
+- theme of buttons done by me
 
 
 ## Future Development
