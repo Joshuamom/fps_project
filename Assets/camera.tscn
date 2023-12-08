@@ -92,7 +92,7 @@ stream = ExtResource("7_sn6ga")
 stream = ExtResource("8_exw84")
 
 [node name="sparkel" type="GPUParticles3D" parent="."]
-transform = Transform3D(-0.391574, 0, -0.713892, 0, 0.814231, 0, 0.713892, 0, -0.391574, 0, 0, 0)
+transform = Transform3D(-0.231307, 0, -0.421703, 0, 0.480974, 0, 0.421703, 0, -0.231307, 0, 0.176687, 0.0770222)
 emitting = false
 lifetime = 0.5
 one_shot = true

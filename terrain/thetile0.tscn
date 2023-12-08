@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmerxr4xey3k5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gkhhi"]
+size = Vector3(4, 0.1, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0kbai"]
+diffuse_mode = 2
+albedo_color = Color(0.266667, 0.105882, 0.0313726, 1)
+metallic = 0.31
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ersuq"]
+points = PackedVector3Array(-2.03175, -0.0817274, -2.03175, 2.03173, 0.108712, 2.03175, 2.03173, -0.0817274, 2.03175, 2.03173, 0.108712, -2.03175, -2.03175, 0.108712, 2.03175, -2.03175, -0.0817274, 2.03175, 2.03173, -0.0817274, -2.03175, -2.03175, 0.108712, -2.03175)
+
+[node name="thetile0" type="StaticBody3D"]
+
+[node name="floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_gkhhi")
+surface_material_override/0 = SubResource("StandardMaterial3D_0kbai")
+
+[node name="Floor_cs" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_ersuq")

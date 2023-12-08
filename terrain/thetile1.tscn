@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://cubcif30h1prh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gkhhi"]
+size = Vector3(4, 0.1, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0kbai"]
+diffuse_mode = 2
+albedo_color = Color(0.266667, 0.105882, 0.0313726, 1)
+metallic = 0.31
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ersuq"]
+points = PackedVector3Array(-2.03175, -0.0817274, -2.03175, 2.03173, 0.108712, 2.03175, 2.03173, -0.0817274, 2.03175, 2.03173, 0.108712, -2.03175, -2.03175, 0.108712, 2.03175, -2.03175, -0.0817274, 2.03175, 2.03173, -0.0817274, -2.03175, -2.03175, 0.108712, -2.03175)
+
+[sub_resource type="BoxMesh" id="BoxMesh_05f23"]
+size = Vector3(4.2, 4, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rttqd"]
+albedo_color = Color(0, 0.34902, 0.0745098, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_07epi"]
+points = PackedVector3Array(-2.13333, -2.03333, -0.0833333, 2.09836, 2, 0.0489071, 2.13333, 2.03333, -0.0833333, 2.13333, -2.03333, -0.0833333, -2.13333, 2.03333, -0.0833333, -2.09836, -2, 0.0489071, 2.09836, -2, 0.0489071, -2.09836, 2, 0.0489071)
+
+[node name="thetile1" type="StaticBody3D"]
+
+[node name="floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_gkhhi")
+surface_material_override/0 = SubResource("StandardMaterial3D_0kbai")
+
+[node name="Floor_cs" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_ersuq")
+
+[node name="N" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9, -2)
+mesh = SubResource("BoxMesh_05f23")
+surface_material_override/0 = SubResource("StandardMaterial3D_rttqd")
+
+[node name="N_cs" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9, -2)
+shape = SubResource("ConvexPolygonShape3D_07epi")
