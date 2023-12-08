@@ -22,13 +22,12 @@ func _unhandled_input(event):
 				menu.hide()
 				set_process(true)   
 				
-	
 func Update_Score(s):
-	Score += 1
-	var hud = get_node_or_null("/root/Player/Score_UI/hud")
+	Score += s
+	var hud = get_node_or_null("/root/Game/UI/Score")
 	if hud != null:
 		hud.text = "Score: " + str(Global.Score)
-		print("S")
+		print("i")
 	else:
 		print("0")
 

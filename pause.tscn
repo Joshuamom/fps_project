@@ -21,23 +21,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.356863, 0.356863, 0.356863, 0.639216)
 
-[node name="top" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 51.0
-grow_horizontal = 2
-color = Color(0.239216, 0.239216, 0.239216, 0.643137)
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 49.0
-grow_horizontal = 2
-text = "
-Objective: get out of the maze"
-
 [node name="Restart" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8

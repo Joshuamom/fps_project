@@ -40,5 +40,5 @@ func damage():
 	dying = true
 	$AnimationPlayer.play("Death")
 	velocity = Vector3.ZERO
-	Global.Update_Score("100")
+	Global.Update_Score(100)
 		

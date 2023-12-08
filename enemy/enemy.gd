@@ -8,6 +8,24 @@ const JUMP_VELOCITY = 4.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
+func damage():
+	
+	$scream.play()
+
+	# Update the score (assuming Global is a singleton or some global script)
+	Global.Update_Score(300)
+	
+	$Timer.start()
+
+  
+
+
+func _on_timer_timeout():
+	queue_free()
+
+
+
+
 #func _physics_process(delta):
 #	# Add the gravity.
 #	if not is_on_floor():
@@ -20,3 +38,5 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 #	move_and_slide()
 #func update_target_location(target_location):
 #	nav_agent.set_target_location(target_location)
+
+
