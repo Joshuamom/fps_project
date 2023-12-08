@@ -2,6 +2,8 @@ extends CharacterBody3D
 
 @onready var NA = $NavigationAgent3D
 const SPEED = 1.5
+var dying = false
+var attack = false
 func _ready():
 	$AnimationPlayer.play("Walk")
 	
@@ -9,7 +11,7 @@ func _ready():
 
 func _physics_process(delta):
 	var player = get_node_or_null("/root/Game/Player")
-	if player != null:
+	if player != null and not dying and not attack:
 		look_at(player.global_position)
 		NA.set_target_position(player.global_position)
 		var current_position = global_position
@@ -21,3 +23,16 @@ func _physics_process(delta):
 	else:
 		velocity.y = 0
 	move_and_slide()
+
+
+func _on_area_3d_body_entered(body):
+	if not dying:
+		attack = true
+		$AnimationPlayer.play("Attack")
+		
+
+func _on_area_3d_body_exited(body):
+	if not dying:
+		attack = false
+		$AnimationPlayer.play("Walk")
+		

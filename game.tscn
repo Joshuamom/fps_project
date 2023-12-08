@@ -54,8 +54,6 @@ shadow_normal_bias = 1.098
 
 [node name="Player" parent="." instance=ExtResource("1_14c8i")]
 transform = Transform3D(1.22144, 0, 0, 0, 1.22144, 0, 0, 0, 1.22144, 9.89958, -1.59177, 1.30323)
-collision_layer = 9
-collision_mask = 9
 
 [node name="pause" parent="." instance=ExtResource("2_jsbxe")]
 
@@ -106,6 +104,8 @@ transform = Transform3D(-5.85713, 0, 2.54353, 0, 35.6378, 0, -270.593, 0, -0.055
 use_collision = true
 
 [node name="Agent" parent="." instance=ExtResource("3_8vffi")]
-transform = Transform3D(0.600874, 0, 0, 0, 0.600874, 0, 0, 0, 0.600874, 17.4521, -1.00648, 4.19841)
+transform = Transform3D(-0.586224, 0, 0.131875, 0, 0.600874, 0, -0.131875, 0, -0.586224, 11.3927, -0.411685, -4.38836)
+collision_layer = 5
+collision_mask = 5
 
 [connection signal="body_shape_entered" from="level change" to="Player" method="_on_level_change_body_shape_entered"]

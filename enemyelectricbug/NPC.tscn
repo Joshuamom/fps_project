@@ -5387,6 +5387,8 @@ libraries = {
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(0.737802, 0, 0, 0, 0.737802, 0, 0, 0, 0.737802, 0, 0, 0)
+collision_layer = 8
+collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(6.50729, 0, 0, 0, 6.50729, 0, 0, 0, 6.50729, 0, 2.2959, 0)
@@ -5427,7 +5429,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="Dialouge"]
-wait_time = 2.0
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Dialouge/Timer" to="." method="_on_timer_timeout"]
