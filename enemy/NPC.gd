@@ -9,6 +9,12 @@ var Dialouge = [
 	, "me: Gotcha! well, i'll just take some photos, maybe of some stange things..."
 ]
 
+func _physics_process(delta):
+		if !is_on_floor():
+			velocity.y -= 9.8
+		else:
+			velocity.y = 0
+
 func _ready():
 	$AnimationPlayer.play("Idle")
 	

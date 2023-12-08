@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://b3urua5poih1e"]
+[gd_scene load_steps=13 format=3 uid="uid://b3urua5poih1e"]
 
 [ext_resource type="PackedScene" uid="uid://cw6oow7yua8ym" path="res://Player/player.tscn" id="1_14c8i"]
 [ext_resource type="Script" path="res://game.gd" id="1_h27l4"]
 [ext_resource type="PackedScene" uid="uid://dnf1hpkka1cqn" path="res://pause.tscn" id="2_jsbxe"]
 [ext_resource type="PackedScene" uid="uid://cvnp627k8hg5h" path="res://enemy/enemy.tscn" id="3_7yd25"]
 [ext_resource type="PackedScene" uid="uid://d0sxm8vywrwu2" path="res://enemyelectricbug/Agent.tscn" id="3_8vffi"]
-[ext_resource type="PackedScene" uid="uid://i5mbdkjcbvli" path="res://level_change.tscn" id="4_ou6bp"]
 [ext_resource type="PackedScene" uid="uid://8j50jbrnd1b6" path="res://terrain/terrain.tscn" id="5_001yd"]
 [ext_resource type="PackedScene" uid="uid://cyw8mxpqjyvh3" path="res://enemyelectricbug/NPC.tscn" id="7_kjy6f"]
 [ext_resource type="PackedScene" uid="uid://bou0equvxs6kg" path="res://terrain/maze.tscn" id="8_4ykn0"]
@@ -53,36 +52,34 @@ shadow_bias = 2.477
 shadow_normal_bias = 1.098
 
 [node name="Player" parent="." instance=ExtResource("1_14c8i")]
-transform = Transform3D(1.22144, 0, 0, 0, 1.22144, 0, 0, 0, 1.22144, 9.89958, -1.59177, 1.30323)
+transform = Transform3D(1.22144, 0, 0, 0, 1.22144, 0, 0, 0, 1.22144, 9.89958, -0.341479, 0.122972)
 
 [node name="pause" parent="." instance=ExtResource("2_jsbxe")]
 visible = false
 
 [node name="enemy" parent="." instance=ExtResource("3_7yd25")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4568, -1.09624, 7.3293)
+transform = Transform3D(1.00022, 0, 0, 0, 1.00022, 0, 0, 0, 1.00022, -11.4568, 0.0446481, 7.3293)
 
 [node name="terrain holder" type="Node" parent="."]
 
 [node name="Maze" parent="terrain holder" instance=ExtResource("8_4ykn0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.139, 60.198)
-
-[node name="level change" parent="terrain holder" instance=ExtResource("4_ou6bp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.6374, -0.758828, -0.788552)
+transform = Transform3D(0.753031, 0, 0, 0, 0.753031, 0, 0, 0, 0.753031, 25.8449, 0.574128, 1.5472)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="terrain holder"]
+transform = Transform3D(0.753031, 0, 0, 0, 0.753031, 0, 0, 0, 0.753031, -4.91197, 0.864361, -3.23544)
 navigation_mesh = SubResource("NavigationMesh_n4pxf")
 
 [node name="terrain" parent="terrain holder/NavigationRegion3D" instance=ExtResource("5_001yd")]
 transform = Transform3D(4.0709, 0, 0, 0, 4.0709, 0, 0, 0, 4.0709, 0, -1.13944, 28.7362)
 
 [node name="CSGTorus3D" type="CSGTorus3D" parent="terrain holder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.8825, -1.41161, -1.01176)
+transform = Transform3D(0.753031, 0, 0, 0, 0.753031, 0, 0, 0, 0.753031, -34.9447, -0.198626, -3.99732)
 use_collision = true
 inner_radius = 6.616
 outer_radius = 5.9
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="terrain holder"]
-transform = Transform3D(23.3508, 0, 0, 0, 23.7925, 0, 0, 0, 26.8099, -43.8915, -0.192318, -0.108612)
+transform = Transform3D(17.5839, 0, 0, 0, 17.9165, 0, 0, 0, 20.1887, -37.9636, 0.719539, -3.31722)
 use_collision = true
 rings = 20
 
@@ -92,27 +89,31 @@ operation = 2
 use_collision = true
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="terrain holder"]
-transform = Transform3D(270.657, 0, 0, 0, 35.6378, 0, 0, 0, 2.54413, -20.9496, 8.66933, -83.4975)
+transform = Transform3D(203.813, 0, 0, 0, 26.8364, 0, 0, 0, 1.91581, -20.6877, 7.39264, -54.6852)
+use_collision = true
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="terrain holder"]
+transform = Transform3D(203.813, 0, 0, 0, 26.8364, 0, 0, 0, 1.91581, -20.6877, 7.39264, 45.0034)
 use_collision = true
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="terrain holder"]
-transform = Transform3D(-5.85713, 0, 2.54353, 0, 35.6378, 0, -270.593, 0, -0.055056, 73.5604, 8.66933, -25.5002)
+transform = Transform3D(-4.4106, 0, 1.91536, 0, 26.8364, 0, -203.765, 0, -0.0414589, 44.0739, 7.39264, -22.4379)
 use_collision = true
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="terrain holder"]
-transform = Transform3D(-5.85713, 0, 2.54353, 0, 35.6378, 0, -270.593, 0, -0.055056, -108.06, 8.66933, -25.5002)
+transform = Transform3D(7.18405, 0, 1.91462, 0, 26.8364, 0, -203.686, 0, 0.0675289, -82.0757, 7.39264, 6.14893)
 use_collision = true
 
 [node name="NPC" parent="." instance=ExtResource("7_kjy6f")]
-transform = Transform3D(0.606738, 0, 0.0442579, 0, 0.60835, 0, -0.0442579, 0, 0.606738, 9.69461, -0.976785, -1.06265)
+transform = Transform3D(0.606738, 0, 0.0442579, 0, 0.60835, 0, -0.0442579, 0, 0.606738, 9.69461, 0.166568, -3.7848)
 
 [node name="Agent" parent="." instance=ExtResource("3_8vffi")]
-transform = Transform3D(-0.586224, 0, 0.131875, 0, 0.600874, 0, -0.131875, 0, -0.586224, -7.22525, -0.411685, -4.38836)
+transform = Transform3D(-0.586224, 0, 0.131875, 0, 0.600874, 0, -0.131875, 0, -0.586224, -14.9634, -0.0945313, -4.53396)
 collision_layer = 5
 collision_mask = 5
 
 [node name="Agent2" parent="." instance=ExtResource("3_8vffi")]
-transform = Transform3D(-0.147104, 0, -0.582589, 0, 0.600874, 0, 0.582589, 0, -0.147104, -34.7344, -0.411685, 20.2503)
+transform = Transform3D(-0.147104, 0, -0.582589, 0, 0.600874, 0, 0.582589, 0, -0.147104, -23.7476, 3.56874, 20.2503)
 collision_layer = 5
 collision_mask = 5
 
@@ -130,5 +131,3 @@ offset_right = 500.0
 offset_bottom = 47.0
 text = "SCORE:"
 vertical_alignment = 1
-
-[connection signal="body_shape_entered" from="terrain holder/level change" to="Player" method="_on_level_change_body_shape_entered"]
