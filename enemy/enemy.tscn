@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvnp627k8hg5h"]
+[gd_scene load_steps=14 format=3 uid="uid://cvnp627k8hg5h"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_wpsi7"]
 [ext_resource type="AudioStream" uid="uid://r64boaxtnvll" path="res://enemy/tbh-creature-scream-made-with-Voicemod-technology.mp3" id="2_2236e"]
-[ext_resource type="AudioStream" uid="uid://j0q6yyd6f1sf" path="res://enemy/scream.wav" id="3_4cw7e"]
+[ext_resource type="AudioStream" uid="uid://dkw8o05w21wl0" path="res://yippie.wav" id="3_snk73"]
+[ext_resource type="AudioStream" uid="uid://clul2l7vppwfr" path="res://glowing.wav" id="4_mugl7"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_gfyso"]
 
@@ -25,6 +26,42 @@ refraction_scale = -0.05
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_pci8o"]
 height = 1.94954
 radius = 0.884398
+
+[sub_resource type="Curve" id="Curve_utwlx"]
+_data = [Vector2(0.00441501, 0.589474), 0.0, 0.0, 0, 0, Vector2(0.273731, 0.978947), 0.0, 0.0, 0, 0, Vector2(0.97351, 0.547368), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_0la1x"]
+curve = SubResource("Curve_utwlx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1jdid"]
+lifetime_randomness = 1.0
+initial_velocity_min = 7.0
+initial_velocity_max = 7.0
+tangential_accel_min = 3.8
+tangential_accel_max = 3.9
+damping_min = 0.465
+damping_max = 0.535
+scale_min = 0.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_0la1x")
+color = Color(0.760784, 0.74902, 0, 1)
+hue_variation_min = 1.0
+hue_variation_max = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4attj"]
+vertex_color_use_as_albedo = true
+metallic_specular = 1.0
+roughness = 0.0
+emission_enabled = true
+emission = Color(0.956863, 0.737255, 0.282353, 1)
+emission_on_uv2 = true
+ao_enabled = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_u53kt"]
+material = SubResource("StandardMaterial3D_4attj")
+radius = 0.15
+height = 0.3
 
 [node name="enemy" type="CharacterBody3D" groups=["goul"]]
 collision_layer = 3
@@ -58,7 +95,7 @@ transform = Transform3D(1, 0, 0, 0, -0.0269413, 1.78219, 0, -3.09334, -0.0155219
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="scream" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_4cw7e")
+stream = ExtResource("3_snk73")
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -67,6 +104,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985089, 0)
 light_color = Color(1, 1, 0.541176, 1)
 light_energy = 6.11
 light_size = 0.201
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.898808, 0)
+stream = ExtResource("4_mugl7")
+autoplay = true
+max_distance = 30.0
+
+[node name="sparkel2" type="GPUParticles3D" parent="."]
+transform = Transform3D(-0.231307, 0, -0.421703, 0, 0.480974, 0, 0.421703, 0, -0.231307, -0.238662, 0.889028, -0.0294778)
+emitting = false
+lifetime = 0.5
+one_shot = true
+randomness = 0.08
+visibility_aabb = AABB(-3.69, -4, -4, 8, 8, 8)
+process_material = SubResource("ParticleProcessMaterial_1jdid")
+draw_pass_1 = SubResource("SphereMesh_u53kt")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

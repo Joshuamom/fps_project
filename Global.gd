@@ -39,7 +39,7 @@ func Update_Score(s):
 		print("0")
 		
 func check_score_threshold():
-	var score_threshold = 800  
+	var score_threshold = 1000  
 	if Score >= score_threshold:
 		await get_tree().change_scene_to_file("res://UI/end.tscn")
 

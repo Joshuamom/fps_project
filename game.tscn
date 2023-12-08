@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b3urua5poih1e"]
+[gd_scene load_steps=15 format=3 uid="uid://b3urua5poih1e"]
 
 [ext_resource type="PackedScene" uid="uid://cw6oow7yua8ym" path="res://Player/player.tscn" id="1_14c8i"]
 [ext_resource type="Script" path="res://game.gd" id="1_h27l4"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cyw8mxpqjyvh3" path="res://enemyelectricbug/NPC.tscn" id="7_kjy6f"]
 [ext_resource type="PackedScene" uid="uid://bou0equvxs6kg" path="res://terrain/maze.tscn" id="8_4ykn0"]
 [ext_resource type="FontFile" uid="uid://ct4jtrqs65hbn" path="res://Assets/Cheeky Rabbit.ttf" id="9_n1rbd"]
+[ext_resource type="PackedScene" uid="uid://7u2iaq23yh3u" path="res://Assets/flame.tscn" id="10_knban"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tmd8p"]
 sky_top_color = Color(0.164706, 0.203922, 0.258824, 1)
@@ -59,7 +60,19 @@ transform = Transform3D(1.22144, 0, 0, 0, 1.22144, 0, 0, 0, 1.22144, 9.89958, -0
 visible = false
 
 [node name="enemy" parent="." instance=ExtResource("3_7yd25")]
-transform = Transform3D(1.00022, 0, 0, 0, 1.00022, 0, 0, 0, 1.00022, -11.4568, 0.0446481, 7.3293)
+transform = Transform3D(1.00022, 0, 0, 0, 1.00022, 0, 0, 0, 1.00022, 31.7771, 2.01613, 15.5283)
+
+[node name="enemy2" parent="." instance=ExtResource("3_7yd25")]
+transform = Transform3D(1.00022, 0, 0, 0, 1.00022, 0, 0, 0, 1.00022, -11.4568, 1.73269, -12.3884)
+
+[node name="enemy3" parent="." instance=ExtResource("3_7yd25")]
+transform = Transform3D(1.00022, 0, 0, 0, 1.00022, 0, 0, 0, 1.00022, -32.4938, 1.73269, 32.6856)
+
+[node name="enemy4" parent="." instance=ExtResource("3_7yd25")]
+transform = Transform3D(1.00022, 0, 0, 0, 1.00022, 0, 0, 0, 1.00022, -32.4938, 1.73269, -41.3588)
+
+[node name="enemy5" parent="." instance=ExtResource("3_7yd25")]
+transform = Transform3D(1.00022, 0, 0, 0, 1.00022, 0, 0, 0, 1.00022, -35.584, 1.73269, -3.65139)
 
 [node name="terrain holder" type="Node" parent="."]
 
@@ -145,3 +158,6 @@ theme_override_font_sizes/font_size = 20
 text = "Goal: reach 1000 points"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Flame" parent="." instance=ExtResource("10_knban")]
+transform = Transform3D(1.68285, 0, 0, 0, 1.68285, 0, 0, 0, 1.68285, 10.2878, 0.862926, 11.5088)

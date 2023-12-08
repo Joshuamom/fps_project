@@ -11,9 +11,10 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func damage():
 	
 	$scream.play()
+	$sparkel2.emitting = true
 
 	# Update the score (assuming Global is a singleton or some global script)
-	Global.Update_Score(200)
+	Global.Update_Score(100)
 	
 	$Timer.start()
 

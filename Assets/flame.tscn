@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://7u2iaq23yh3u"]
+
+[sub_resource type="Gradient" id="Gradient_yv62h"]
+colors = PackedColorArray(0.694118, 0, 0, 1, 0.885259, 0.334379, 0.106291, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bm88a"]
+gradient = SubResource("Gradient_yv62h")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lkhev"]
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_box_extents = Vector3(0.05, 0.05, 0.05)
+direction = Vector3(0, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.1
+initial_velocity_max = 0.7
+scale_min = 0.5
+color_ramp = SubResource("GradientTexture1D_bm88a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4twq"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.592157)
+
+[sub_resource type="SphereMesh" id="SphereMesh_t2qd0"]
+material = SubResource("StandardMaterial3D_u4twq")
+rings = 117
+
+[node name="Flame" type="Node3D"]
+transform = Transform3D(1.68285, 0, 0, 0, 1.68285, 0, 0, 0, 1.68285, 0, 0, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_lkhev")
+draw_pass_1 = SubResource("SphereMesh_t2qd0")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.105289, 2.38419e-07, -0.0944614)
+light_color = Color(1, 0.478431, 0.32549, 1)
+light_energy = 4.279
+light_size = 5.0

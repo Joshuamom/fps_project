@@ -1,6 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://d0sxm8vywrwu2"]
+[gd_scene load_steps=25 format=3 uid="uid://d0sxm8vywrwu2"]
 
 [ext_resource type="Script" path="res://enemyelectricbug/Agent.gd" id="1_fajnd"]
+[ext_resource type="AudioStream" uid="uid://blamloncmi2mr" path="res://zombie sound.wav" id="2_db6bg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_riley"]
 radius = 1.0
@@ -5401,6 +5402,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.14208, -2.07672)
 shape = SubResource("BoxShape3D_wb3at")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.91248, 0)
+stream = ExtResource("2_db6bg")
+volume_db = 7.04
+autoplay = true
+max_distance = 20.0
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
