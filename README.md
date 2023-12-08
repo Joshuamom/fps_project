@@ -14,6 +14,7 @@ Description
 - reports score
 - menus (pause, main, and end)
   extra things:
+- a camera is used as a gun
 - added particles to the camer flash, orb dissaperating, and blood particles for zombie death
 - enviormental lighting (fog, fire light, players camera light flash,players light in general)
 - add of sound to fire, zombie, lighting, orb
