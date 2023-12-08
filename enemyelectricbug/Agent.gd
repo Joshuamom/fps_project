@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @onready var NA = $NavigationAgent3D
 var is_paused = false
-const SPEED = .5
+const SPEED = .7
 var dying = false
 var attack = false
 func _ready():

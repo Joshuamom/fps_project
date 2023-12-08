@@ -9,6 +9,7 @@ func _ready():
 	menu = get_node_or_null("/root/Game/pause")
 
 func reset():
+	get_tree().paused = false
 	Score = 0
 
 func _unhandled_input(event):
@@ -19,9 +20,11 @@ func _unhandled_input(event):
 			print("Pause menu not found!")
 		else:
 			if not menu.visible:
+				get_tree().paused = true
 				menu.show()
 				set_process(false)  
 			else:
+				get_tree().paused = false
 				menu.hide()
 				set_process(true)   
 				
