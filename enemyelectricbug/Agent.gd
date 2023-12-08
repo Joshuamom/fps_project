@@ -41,4 +41,9 @@ func damage():
 	$AnimationPlayer.play("Death")
 	velocity = Vector3.ZERO
 	Global.Update_Score(100)
+	$Timer.start()
 		
+
+
+func _on_timer_timeout():
+	queue_free()

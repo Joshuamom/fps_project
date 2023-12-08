@@ -27,9 +27,15 @@ func Update_Score(s):
 	var hud = get_node_or_null("/root/Game/UI/Score")
 	if hud != null:
 		hud.text = "Score: " + str(Global.Score)
+		check_score_threshold()
 		print("i")
 	else:
 		print("0")
+		
+func check_score_threshold():
+	var score_threshold = 800  
+	if Score >= score_threshold:
+		await get_tree().change_scene_to_file("res://UI/end.tscn")
 
 		
 
