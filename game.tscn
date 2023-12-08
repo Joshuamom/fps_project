@@ -56,6 +56,7 @@ shadow_normal_bias = 1.098
 transform = Transform3D(1.22144, 0, 0, 0, 1.22144, 0, 0, 0, 1.22144, 9.89958, -1.59177, 1.30323)
 
 [node name="pause" parent="." instance=ExtResource("2_jsbxe")]
+visible = false
 
 [node name="enemy" parent="." instance=ExtResource("3_7yd25")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4568, -1.09624, 7.3293)

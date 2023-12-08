@@ -8,6 +8,9 @@ func _ready():
 	process_mode = PROCESS_MODE_ALWAYS
 	menu = get_node_or_null("/root/Game/pause")
 
+func reset():
+	Score = 0
+
 func _unhandled_input(event):
 	if event.is_action_pressed("pause"):
 		menu = get_node_or_null("/root/Game/pause")

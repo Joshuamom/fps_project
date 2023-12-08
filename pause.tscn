@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://UI/Menu.gd" id="1_r0h8g"]
 
 [node name="pause" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
