@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @onready var NA = $NavigationAgent3D
-const SPEED = 1.5
+const SPEED = .5
 var dying = false
 var attack = false
 func _ready():
@@ -35,4 +35,10 @@ func _on_area_3d_body_exited(body):
 	if not dying:
 		attack = false
 		$AnimationPlayer.play("Walk")
+		
+func damage():
+	dying = true
+	$AnimationPlayer.play("Death")
+	velocity = Vector3.ZERO
+	Global.Update_Score("100")
 		

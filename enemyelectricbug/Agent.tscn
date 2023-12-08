@@ -5052,7 +5052,6 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wb3at"]
-size = Vector3(2, 2, 2)
 
 [node name="Agent" type="CharacterBody3D" groups=["goul"]]
 script = ExtResource("1_fajnd")
@@ -5398,7 +5397,7 @@ collision_layer = 5
 collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.14208, -1.74402)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.14208, -2.07672)
 shape = SubResource("BoxShape3D_wb3at")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

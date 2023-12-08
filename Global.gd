@@ -2,6 +2,7 @@
 extends Node
 
 var menu
+var Score = 0
 
 func _ready():
 	process_mode = PROCESS_MODE_ALWAYS
@@ -20,6 +21,17 @@ func _unhandled_input(event):
 			else:
 				menu.hide()
 				set_process(true)   
+				
+	
+func Update_Score(s):
+	Score += 1
+	var hud = get_node_or_null("/root/Player/Score_UI/hud")
+	if hud != null:
+		hud.text = "Score: " + str(Global.Score)
+		print(Score)
+	else:
+		hud.text = "Score: " + str(Global.Score)
+		print(Score)
 
 		
 

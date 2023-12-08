@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cw6oow7yua8ym"]
+[gd_scene load_steps=11 format=3 uid="uid://cw6oow7yua8ym"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_uwktc"]
 [ext_resource type="Texture2D" uid="uid://myhoyumvj48n" path="res://10124_SLR_Camera_V1_Diffuse.jpg" id="2_q6b0l"]
 [ext_resource type="ArrayMesh" uid="uid://dws8np7cged7i" path="res://10124_SLR_Camera_SG_V1_Iteration2.obj" id="3_xsxji"]
 [ext_resource type="PackedScene" uid="uid://diorvqcby5i7k" path="res://Assets/camera.tscn" id="4_enfxb"]
 [ext_resource type="AudioStream" uid="uid://dmg7j5qr2ob3l" path="res://enemy/166500__thompsonman__camera-shutter.wav" id="5_58twy"]
+[ext_resource type="Script" path="res://Player/hud.gd" id="6_4kd2y"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_53vmu"]
 radius = 0.497201
@@ -62,3 +63,23 @@ light_indirect_energy = 2.508
 omni_range = 17.655
 omni_attenuation = 1.23114
 omni_shadow_mode = 0
+
+[node name="Score_UI" type="CanvasLayer" parent="."]
+
+[node name="hud" type="Control" parent="Score_UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = -594.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_4kd2y")
+
+[node name="Score" type="Label" parent="Score_UI/hud"]
+layout_mode = 0
+offset_right = 195.0
+offset_bottom = 50.0
+text = "SCORE:"
+vertical_alignment = 1
