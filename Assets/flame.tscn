@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://7u2iaq23yh3u"]
+[gd_scene load_steps=7 format=3 uid="uid://7u2iaq23yh3u"]
+
+[ext_resource type="AudioStream" uid="uid://tofpx8axp8cj" path="res://addons/dialogue_manager/679007__cagankaya__campfire-24-bit-44.wav" id="1_ua56o"]
 
 [sub_resource type="Gradient" id="Gradient_yv62h"]
 colors = PackedColorArray(0.694118, 0, 0, 1, 0.885259, 0.334379, 0.106291, 1)
@@ -42,3 +44,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.105289, 2.38419e-07, -0.094
 light_color = Color(1, 0.478431, 0.32549, 1)
 light_energy = 4.279
 light_size = 5.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_ua56o")
+autoplay = true
+max_distance = 7.0

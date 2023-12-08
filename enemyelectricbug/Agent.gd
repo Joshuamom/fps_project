@@ -40,6 +40,7 @@ func _on_area_3d_body_exited(body):
 		
 func damage():
 	dying = true
+	$death_sound.play()
 	$AnimationPlayer.play("Death")
 	velocity = Vector3.ZERO
 	Global.Update_Score(100)

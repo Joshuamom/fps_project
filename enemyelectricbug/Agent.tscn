@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://d0sxm8vywrwu2"]
+[gd_scene load_steps=26 format=3 uid="uid://d0sxm8vywrwu2"]
 
 [ext_resource type="Script" path="res://enemyelectricbug/Agent.gd" id="1_fajnd"]
 [ext_resource type="AudioStream" uid="uid://blamloncmi2mr" path="res://zombie sound.wav" id="2_db6bg"]
+[ext_resource type="AudioStream" uid="uid://cx5kqagma8q23" path="res://555411__tonsil5__zombie-death-2.wav" id="3_d5jqk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_riley"]
 radius = 1.0
@@ -5409,6 +5410,9 @@ stream = ExtResource("2_db6bg")
 volume_db = 7.04
 autoplay = true
 max_distance = 20.0
+
+[node name="death_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_d5jqk")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
