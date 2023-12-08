@@ -17,6 +17,7 @@ https://www.kenney.nl/assets/blaster-kit
 - flash sound: https://freesound.org/people/ThompsonMan/sounds/166500/
 - scream sound: https://tuna.voicemod.net/sound/dd9b6ba5-9f46-4050-aa21-1291223cab12
 - flash model: https://opengameart.org/content/muzzle-flash-with-model
+- enemy and NPC: https://www.kenney.nl/assets/animated-characters-2
 ## Future Development
 
 - make a tv model
