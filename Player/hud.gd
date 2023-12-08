@@ -1,5 +1,7 @@
 extends Control
 
+@onready score = 
+
 func _ready():
 	Update_Score()
 

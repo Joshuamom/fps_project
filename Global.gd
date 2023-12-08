@@ -28,10 +28,9 @@ func Update_Score(s):
 	var hud = get_node_or_null("/root/Player/Score_UI/hud")
 	if hud != null:
 		hud.text = "Score: " + str(Global.Score)
-		print(Score)
+		print("S")
 	else:
-		hud.text = "Score: " + str(Global.Score)
-		print(Score)
+		print("0")
 
 		
 
