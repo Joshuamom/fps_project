@@ -74,6 +74,9 @@ visible = false
 [node name="enemy" parent="enemy holder" instance=ExtResource("3_7yd25")]
 transform = Transform3D(1.00022, 0, 0, 0, 1.00022, 0, 0, 0, 1.00022, 18.7771, 2.01613, 7.5283)
 
+[node name="enemy6" parent="enemy holder" instance=ExtResource("3_7yd25")]
+transform = Transform3D(1.00022, 0, 0, 0, 1.00022, 0, 0, 0, 1.00022, 2.05299, 2.68769, 30.3773)
+
 [node name="enemy2" parent="enemy holder" instance=ExtResource("3_7yd25")]
 transform = Transform3D(1.00022, 0, 0, 0, 1.00022, 0, 0, 0, 1.00022, -11.4568, 1.73269, -12.3884)
 
