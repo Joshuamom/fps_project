@@ -9,7 +9,7 @@ Description
 - a terain for the player to walk around
 - a generated maze
 - use of the CSG to make the giant cave with subtraction and animated
-- has a enemy that walks and comes to you
+- has a enemy that walks and comes to you, dont let them touch you
 - dialouge at the beginning for narrative story
 - reports score
 - menus (pause, main, and end)
