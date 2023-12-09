@@ -32,6 +32,9 @@ func _on_area_3d_body_entered(body):
 	if not dying:
 		attack = true
 		$AnimationPlayer.play("Attack")
+		if body.name == "Player":
+			print("iu")
+			body.damage()
 		
 
 func _on_area_3d_body_exited(body):

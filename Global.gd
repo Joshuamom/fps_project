@@ -3,6 +3,8 @@ extends Node
 
 var menu
 var Score = 0
+var health = 0
+
 
 func _ready():
 	process_mode = PROCESS_MODE_ALWAYS
@@ -11,6 +13,7 @@ func _ready():
 func reset():
 	get_tree().paused = false
 	Score = 0
+	health = 1
 
 func _unhandled_input(event):
 	if event.is_action_pressed("pause"):
@@ -38,6 +41,9 @@ func Update_Score(s):
 	else:
 		print("0")
 		
+func Update_Lives(l):
+	if health < 0:
+		get_tree().change_scene_to_file("res://UI/end.tscn")
 func check_score_threshold():
 	var score_threshold = 1000  
 	if Score >= score_threshold:

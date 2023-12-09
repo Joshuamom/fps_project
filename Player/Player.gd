@@ -4,7 +4,7 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const MOUSE_SENSITIVITY = 0.030
 const MOUSE_RANGE = 1.2
-var health = 1
+var health = 2
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -51,7 +51,10 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-
+func damage():
+	health -= 2
+	if health <=0:
+		get_tree().change_scene_to_file("res://UI/retry.tscn")
 
 func _on_level_change_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	if body.name == "Player":
